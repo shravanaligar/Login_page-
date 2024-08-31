@@ -21,7 +21,9 @@ public class Login extends HttpServlet {
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");
 		
-		if(uname.equals("shravan") && pass.equals("shravan"))
+		LoginDAO d = new LoginDAO();
+		
+		if(d.Check(uname, pass))
 			
 		{
 			HttpSession session = request.getSession();
